@@ -2,6 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Amir Zahavi</Authors>
+    <Company />
+    <Product>ServicesRegistration</Product>
+    <Description>.NET Core 2.0 registration mechanism to mark and auto register components into IServiceCollection.
+Core Attributes for marking components.</Description>
   </PropertyGroup>
 
 </Project>
