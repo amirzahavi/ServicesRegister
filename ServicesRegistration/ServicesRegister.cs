@@ -28,7 +28,7 @@ namespace ServicesRegistration
         public static IServiceCollection RegisterServices(this IServiceCollection services, Action<ServicesRegisterOptions> options)
         {
             if (options == null)
-                throw new ArgumentNullException("action");
+                throw new ArgumentNullException("options");
 
             var option = new ServicesRegisterOptions
             {
@@ -105,11 +105,6 @@ namespace ServicesRegistration
 
             foreach (var type in types)
                 RegisterService(type);
-        }
-
-        private static bool GetImplementation(ServiceAttribute attribute, out Type @interface)
-        {
-            throw new NotImplementedException();
         }
 
         /// <summary>

@@ -12,7 +12,7 @@
     <PackageLicenseUrl>https://github.com/amirzahavi/ServicesRegister/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/amirzahavi/ServicesRegister</RepositoryUrl>
     <PackageTags>.NET Core 2.0</PackageTags>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>

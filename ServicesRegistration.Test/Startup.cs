@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,6 +11,14 @@ namespace ServicesRegistration.Test
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.RegisterServices();
+
+            /* 
+            services.RegisterServices(options => {
+                options.IgnoreAssemblies.Add("add here assembly full name to ignore");                
+                options.LoadAllAssemblies = false; //for load only specified assemblies in options.AvailableAssemblies
+            });
+            */
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -27,7 +31,9 @@ namespace ServicesRegistration.Test
 
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Hello World!");
+                var transient = context.RequestServices.GetService<TransientComponent>();
+                var singleton = context.RequestServices.GetService<IComponent>();
+                await context.Response.WriteAsync($"transient: {transient.Num}, singlton: {singleton.Num}");
             });
         }
     }
