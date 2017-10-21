@@ -2,9 +2,21 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Amir Zahavi</Authors>
+    <Company />
+    <Description>.NET Core 2.0 registration mechanism to mark and auto register components into IServiceCollection.
+
+</Description>
+    <PackageProjectUrl>https://github.com/amirzahavi/ServicesRegister/wiki</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/amirzahavi/ServicesRegister/blob/master/LICENSE</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/amirzahavi/ServicesRegister</RepositoryUrl>
+    <PackageTags>.NET Core 2.0</PackageTags>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.0.0" />
     <PackageReference Include="ServicesRegistration.Core" Version="1.0.0" />
   </ItemGroup>
 
